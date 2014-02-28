@@ -1,10 +1,17 @@
+import csv
 from flask import Flask
 from flask import render_template
 app = Flask(__name__) # Note the double underscores on each side! You'll see them again.
 
+csv_path = "./static/la-riots-deaths.csv"
+csv_obj = csv.DictReader(open(csv_path, 'r'))
+csv_list = list(csv_obj)
+
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", 
+        object_list = csv_list,
+    )
 
 if __name__ == '__main__':
     app.run(
