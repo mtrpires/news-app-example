@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
         <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
 		</head>
     <body>
@@ -45,6 +45,7 @@
 		          "type": "Feature",
 		          "properties": {
 		            "full_name": "{{ obj.full_name }}",
+					"age": "{{ obj.age }}",
 		            "id": "{{ obj.id }}"
 		          },
 		          "geometry": {
@@ -59,7 +60,7 @@
                 onEachFeature: function(feature, layer) {
                     layer.bindPopup(
                         '<a href="' + feature.properties.id + '/">' +
-                            feature.properties.full_name +
+                            feature.properties.full_name + ", " + feature.properties.age +
                         '</a>'
                     );
                 }
