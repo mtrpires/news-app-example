@@ -1,2 +1,2 @@
-NICAR 2014 WOOT - First news app!
+NICAR 2014 WOOT - news app!
 =================================
